@@ -6,3 +6,5 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
+log "*** Hello from mywin-cookbook::default"

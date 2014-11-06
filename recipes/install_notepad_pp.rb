@@ -1,14 +1,3 @@
-#
-# Cookbook Name:: helloworld
-# Recipe:: default
-#
-# Copyright 2014, YOUR_COMPANY_NAME
-#
-# All rights reserved - Do Not Redistribute
-#
-
-
-
 
 #Creates a directory with proper permissions
 #http://docs.opscode.com/resource_directory.html
