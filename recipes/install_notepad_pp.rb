@@ -7,8 +7,8 @@ directory 'C:\MyKits\Notepad' do
 end
 
 remote_file 'C:\MyKits\Notepad\npp_installer.exe' do
-  source default['notepadpp']['url']
-	checksum default['notepadpp']['checksum']
+  source node['notepadpp']['url']
+	checksum node['notepadpp']['checksum']
 end
 
 #http://docs.opscode.com/resource_batch.html
