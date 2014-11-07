@@ -6,8 +6,9 @@ directory 'C:\MyKits\Notepad' do
   recursive true
 end
 
-remote_file 'C:\MyKits\Notepad\npp.6.6.8.Installer.exe' do
-  source "http://download.tuxfamily.org/notepadplus/6.6.8/npp.6.6.8.Installer.exe"
+remote_file 'C:\MyKits\Notepad\npp_installer.exe' do
+  source default['notepadpp']['url']
+	checksum default['notepadpp']['checksum']
 end
 
 #http://docs.opscode.com/resource_batch.html
@@ -19,7 +20,7 @@ end
 #Install Notepad++ using windows_package
 #http://docs.opscode.com/lwrp_windows.html#windows-package
 windows_package "Notepad++" do
-  source 'C:\MyKits\Notepad\npp.6.6.8.Installer.exe'
-  installer_type "msi"
+  source 'C:\MyKits\Notepad\npp_installer.exe'
+  installer_type :msi
   action :install 
 end

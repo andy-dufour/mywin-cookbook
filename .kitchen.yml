@@ -1,0 +1,19 @@
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: win2012r2
+    driver:
+      box: win2012r2
+      box_url: win2012r2
+      network:
+      - ["forwarded_port", {guest: 80, host: 8888}]
+
+suites:
+  - name: default
+    run_list:
+      - recipe[mywin-cookbook::default]
+    attributes:
