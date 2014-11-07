@@ -21,6 +21,7 @@ end
 #http://docs.opscode.com/lwrp_windows.html#windows-package
 windows_package "Notepad++" do
   source 'C:\MyKits\Notepad\npp_installer.exe'
-  installer_type :msi
-  action :install 
+  installer_type :custom
+	options "/S"
+	action :install 
 end
