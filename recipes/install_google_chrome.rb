@@ -8,9 +8,9 @@ else
 end
 
 directory 'C:\MyKits\test1am' do
-  action :create
   recursive true
   only_if { Time.now.hour == 1 }
+  action :create
 end
 
 
@@ -22,7 +22,9 @@ directory 'C:\MyKits\Chrome' do
 end
 
 remote_file 'C:\MyKits\Chrome\GoogleChromeStandaloneEnterprise.msi' do
-  source "https://s3-eu-west-1.amazonaws.com/apop-bucket/GoogleChromeStandaloneEnterprise.msi"
+  source node['chrome']['url']
+	checksum node['chrome']['checksum']
+  action :create
 end
 
 #http://docs.opscode.com/resource_batch.html
