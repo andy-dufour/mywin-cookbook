@@ -8,3 +8,7 @@
 #
 
 log '*** Hello from mywin-cookbook::default'
+
+file 'c:\tmp\test.txt' do
+  content "mycontent"
+end
