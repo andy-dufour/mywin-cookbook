@@ -1,3 +1,5 @@
+# http://serverspec.org/resource_types.html
+
 require 'spec_helper'
 
 describe port(5985) do
