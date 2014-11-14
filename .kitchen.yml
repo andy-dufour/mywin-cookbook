@@ -1,11 +1,10 @@
----
 driver:
   forward_agent: yes
   name: vagrant
 
 provisioner:
   name: chef_zero
-  require_chef_omnibus: 11.16.0
+  require_chef_omnibus: 11.16.4
 
 transport:
   name: winrm
@@ -14,17 +13,20 @@ platforms:
   - name: win2012r2
     driver:
       box: win2012r2
+      box_url: win2012r2
       vm_hostname:
       network:
-      - ["forwarded_port", {host: 9999, guest: 80}]
+      - ["forwarded_port", {host: 8800, guest: 80}]
       - ["private_network", {ip: "10.10.10.30"}]
       customize:
         cpus: 2
         memory: 2048
-
-
 suites:
   - name: default
     run_list:
       - recipe[windows::default]
+      - recipe[mywin-cookbook::default]
       - recipe[mywin-cookbook::install_notepad_pp]
+      - recipe[mywin-cookbook::install_google_chrome]
+      - recipe[mywin-cookbook::install_putty]
+      - recipe[mywin-cookbook::run_tests]
