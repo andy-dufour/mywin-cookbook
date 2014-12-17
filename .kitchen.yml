@@ -16,8 +16,7 @@ platforms:
       box_url: win2012r2
       vm_hostname:
       network:
-      - ["forwarded_port", {host: 8800, guest: 80}]
-      - ["private_network", {ip: "10.10.10.30"}]
+      - ["private_network", {ip: "192.168.1.30"}]
       customize:
         cpus: 2
         memory: 2048
