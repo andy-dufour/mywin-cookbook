@@ -39,8 +39,8 @@ suites:
   - name: dsc
     run_list:
       - recipe[windows::default]
-#      - recipe[mywin-cookbook::default]
-#      - recipe[mywin-cookbook::install_notepad_pp]
-#      - recipe[mywin-cookbook::install_google_chrome]
-#      - recipe[mywin-cookbook::install_conemu]
+      - recipe[mywin-cookbook::default]
+      - recipe[mywin-cookbook::install_notepad_pp]
+      - recipe[mywin-cookbook::install_google_chrome]
+      - recipe[mywin-cookbook::install_conemu]
       - recipe[mywin-cookbook::sample_dsc]

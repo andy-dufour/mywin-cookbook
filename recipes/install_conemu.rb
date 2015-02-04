@@ -8,6 +8,7 @@ end
 remote_file 'C:\MyKits\ConEmu\ConEmu_installer.exe' do
   source node['conemu']['url']
   checksum node['conemu']['checksum']
+  action :create
 end
 
 # Install Notepad++ using windows_package

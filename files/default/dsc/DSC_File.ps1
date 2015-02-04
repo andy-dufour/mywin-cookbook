@@ -1,10 +1,9 @@
 Configuration 'DSC_File'
 {
-  [CmdletBinding()]
   param
   (
-     $sourcePath,
-     $destinationPath = ''
+    $sourcePath,
+    $destinationPath = ''
   )
   Node 'localhost' 
   {

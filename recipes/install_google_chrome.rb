@@ -15,8 +15,8 @@ end
 # Creates a directory with proper permissions
 # http://docs.opscode.com/resource_directory.html
 directory 'C:\MyKits\Google' do
-  action :create
   recursive true
+  action :create
 end
 
 remote_file 'C:\MyKits\Google\Chrome.msi' do
@@ -38,6 +38,7 @@ windows_package 'Google Chrome' do
   action :install
 end
 
-windows_path 'C:\Program Files (x86)\Google\Chrome\Application' do
-  action :add
-end
+# Needs the 'windows' cookbook
+#windows_path 'C:\Program Files (x86)\Google\Chrome\Application' do
+#  action :add
+#end
