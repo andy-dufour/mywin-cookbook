@@ -4,10 +4,18 @@ maintainer_email 'alex@example.com'
 license 'All rights reserved'
 description 'Installs/Configures mywin-cookbook'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.2.0'
+version '1.4.7'
 
-# Needed for windows_path resource and a fix in the windows_package resource
-depends 'windows'
+recipe 'mywin-cookbook::default', 'Default recipe, not implemented yet'
+recipe 'mywin-cookbook::install_notepad_pp', 'Installs Notepad PlusPlus from attributes source'
+recipe 'mywin-cookbook::install_conemu', 'Installs ConEmu, a sane Windows terminal'
+recipe 'mywin-cookbook::install_putty', 'Installs PuTTY from attributes source'
+recipe 'mywin-cookbook::install_google_chrome', 'Installs Google Chrome browser'
+recipe 'mywin-cookbook::sample_dsc', 'Demonstrate Microsoft Desired State Configuration integration'
 
-#depends 'iis'
-#depends 'git'
+depends 'windows', '>= 0.0.0'
+depends 'dsc', '>= 0.0.0'
+depends 'git', '>= 0.0.0'
+
+supports 'windows'
+

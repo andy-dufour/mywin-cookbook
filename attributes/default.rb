@@ -10,7 +10,7 @@ default['conemu']['url'] = 'https://s3-eu-west-1.amazonaws.com/apop-bucket/ConEm
 default['conemu']['checksum'] = 'ac5692b2d873d31b7e86076b87bb871403517643bfc52b851a9fc2d31e1428ca'
 
 default['putty']['url'] = 'https://s3-eu-west-1.amazonaws.com/apop-bucket/putty-0.63-installer.exe'
-default['putty']['url'] = 'dd9c87f5692509093670e101ebe4230f29b778ff90e30020fcbcd5d3e92a6440'
+default['putty']['checksum'] = 'dd9c87f5692509093670e101ebe4230f29b778ff90e30020fcbcd5d3e92a6440'
 
 default['mywin-cookbook']['doc-root'] = 'c:/inetpub/wwwroot'
 default['mywin-cookbook']['git-repo'] = 'https://github.com/alexpop/myhtml-app'

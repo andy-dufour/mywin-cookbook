@@ -29,7 +29,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[windows::default]
+#      - recipe[windows::default]
       - recipe[mywin-cookbook::default]
       - recipe[mywin-cookbook::install_notepad_pp]
       - recipe[mywin-cookbook::install_google_chrome]
@@ -38,9 +38,10 @@ suites:
 #      - recipe[mywin-cookbook::run_tests]
   - name: dsc
     run_list:
-      - recipe[windows::default]
+      - recipe[dsc::default]
       - recipe[mywin-cookbook::default]
       - recipe[mywin-cookbook::install_notepad_pp]
       - recipe[mywin-cookbook::install_google_chrome]
       - recipe[mywin-cookbook::install_conemu]
+      - recipe[mywin-cookbook::install_putty]
       - recipe[mywin-cookbook::sample_dsc]

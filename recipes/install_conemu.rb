@@ -5,13 +5,15 @@ directory 'C:\MyKits\ConEmu' do
   recursive true
 end
 
+# Download the installer from source if the destination 
+# file is missing or checksum is not matching
 remote_file 'C:\MyKits\ConEmu\ConEmu_installer.exe' do
   source node['conemu']['url']
   checksum node['conemu']['checksum']
   action :create
 end
 
-# Install Notepad++ using windows_package
+# Install ConEmu using windows_package
 # http://docs.opscode.com/lwrp_windows.html#windows-package
 windows_package 'ConEmu 150119a.x86' do
   source 'C:\MyKits\ConEmu\ConEmu_installer.exe'
