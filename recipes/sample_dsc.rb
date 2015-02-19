@@ -13,12 +13,12 @@ end
 
 # Prototype resource provided by the 'dsc' cookbook
 # to map a Chef resource to a DSC resource
-dsc_resource 'example' do
-  resource_name :file
-  property :ensure, 'Present'
-  property :type, "Directory"
-  property :destinationpath, "C:/DSC2"
-end
+#dsc_resource 'example' do
+#  resource_name :file
+#  property :ensure, 'Present'
+#  property :type, "Directory"
+#  property :destinationpath, "C:/DSC2"
+#end
 
 # Use the cookbook_file resource to deploy a file from the cookbook
 cookbook_file 'C:\DSC\DSC_File.ps1' do
