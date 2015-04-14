@@ -8,11 +8,11 @@ end
 
 remote_file "#{temp_dir}chef-client.msi" do
   source node['mywin-cookbook']['chef_package']
-	notifies :run, "powershell_script[upgrade-chef-client]"
+  notifies :run, "powershell_script[upgrade-chef-client]"
 end
 
 powershell_script "upgrade-chef-client" do
-	environment ({'TEMP_DIR' => temp_dir})
+  environment ({'TEMP_DIR' => temp_dir})
   code <<-EOH
     $log = "${ENV:TEMP_DIR}chef_upgrade.txt"
     $dest_inst = "${ENV:TEMP_DIR}chef-client.msi"
