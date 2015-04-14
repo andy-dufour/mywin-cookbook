@@ -1,47 +1,37 @@
+---
 driver:
   forward_agent: yes
   name: vagrant
-
-provisioner:
-  name: chef_zero
-  #require_chef_omnibus: true
-  require_chef_omnibus: 12.0.3
-  #require_chef_omnibus: 11.16.4
-  #chef_omnibus_url: 'file:///share/chef/chef-client-12.0.3-1.msi'
-  #chef_omnibus_url: file:///c:/share/chef/chef-client-12.0.3-1.msi   
+  gui: true
+  vm_hostname:
+  network:
+  - ["private_network", {ip: "192.168.56.30"}]
+  # Mount local /Users/apop/chef-kits folder as c:\share on the VM  
+  synced_folders:
+  - ['/Users/apop/chef-kits', 'c:/share', 'disabled: false']
+  customize:
+    cpus: 2
+    memory: 4096
 
 transport:
   name: winrm
 
+provisioner:
+  name: chef_zero
+
 platforms:
-  - name: win
-    driver:
+  - name: windows2012
+    driver_config:
       box: win2012r2
-      vm_hostname:
-      network:
-      - ["private_network", {ip: "192.168.56.30"}]
-      # Mount local /Users/apop/chef-kits folder as c:\share on the VM  
-      synced_folders:
-      - ['/Users/apop/chef-kits', 'c:/share', 'disabled: false']
-      customize:
-        cpus: 4
-        memory: 3072
+    provisioner:
+      require_chef_omnibus: 12.0.3
+
 suites:
   - name: default
     run_list:
-#      - recipe[windows::default]
       - recipe[mywin-cookbook::default]
-      - recipe[mywin-cookbook::install_notepad_pp]
-      - recipe[mywin-cookbook::install_google_chrome]
-      - recipe[mywin-cookbook::install_putty]
-      - recipe[mywin-cookbook::install_conemu]
-#      - recipe[mywin-cookbook::run_tests]
-  - name: dsc
-    run_list:
-      - recipe[dsc::default]
-      - recipe[mywin-cookbook::default]
-      - recipe[mywin-cookbook::install_notepad_pp]
-      - recipe[mywin-cookbook::install_google_chrome]
-      - recipe[mywin-cookbook::install_conemu]
-      - recipe[mywin-cookbook::install_putty]
-      - recipe[mywin-cookbook::sample_dsc]
+      - recipe[mywin-cookbook::upgrade_client]
+    attributes:
+      mywin-cookbook:
+        chef_package: file:///c:/share/chef/chef-client-12.2.1-1.msi
+

@@ -9,6 +9,13 @@
 
 log '*** Hello from mywin-cookbook::default'
 
-file 'c:\tmp\test.txt' do
-  content 'mycontent'
+# Use the registry_key resource to change the startup type for the chef-client service
+registry_key 'HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\chef-client' do
+  values [{
+    :name => "DelayedAutostart",
+    :type => :dword,
+    :data => 1
+  }]
+  action :create
 end
+

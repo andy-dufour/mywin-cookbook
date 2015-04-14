@@ -15,3 +15,6 @@ default['putty']['checksum'] = 'dd9c87f5692509093670e101ebe4230f29b778ff90e30020
 default['mywin-cookbook']['doc-root'] = 'c:/inetpub/wwwroot'
 default['mywin-cookbook']['git-repo'] = 'https://github.com/alexpop/myhtml-app'
 default['mywin-cookbook']['git-revision'] = 'master'
+
+# package to use when upgrading chef-client
+default['mywin-cookbook']['chef_package']="http://opscode-omnibus-packages.s3.amazonaws.com/windows/2008r2/x86_64/chef-client-12.2.1-1.msi"
