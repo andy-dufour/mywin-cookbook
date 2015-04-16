@@ -1,4 +1,11 @@
----
+transport:
+  name: winrm
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: 11.16.4
+#    require_chef_omnibus: 12.2.1
+
 driver:
   forward_agent: yes
   name: vagrant
@@ -13,19 +20,10 @@ driver:
     cpus: 2
     memory: 4096
 
-transport:
-  name: winrm
-
-provisioner:
-  name: chef_zero
-
 platforms:
   - name: windows2012
     driver_config:
       box: win2012r2
-    provisioner:
-#      require_chef_omnibus: 11.16.4
-      require_chef_omnibus: 12.2.1
 
 suites:
   - name: default
