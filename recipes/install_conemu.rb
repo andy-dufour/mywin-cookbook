@@ -8,8 +8,8 @@ end
 # Download the installer from source if the destination 
 # file is missing or checksum is not matching
 remote_file 'C:\MyKits\ConEmu\ConEmu_installer.exe' do
-  source node['conemu']['url']
-  checksum node['conemu']['checksum']
+  source node['mywin-cookbook']['conemu']['url']
+  checksum node['mywin-cookbook']['conemu']['checksum']
   action :create
 end
 

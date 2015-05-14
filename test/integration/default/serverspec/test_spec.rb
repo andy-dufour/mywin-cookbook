@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe 'Host File' do
-	describe file('c:/chef') do
-		it { should be_directory }
-	end
+  describe file('c:/chef') do
+    it { should be_directory }
+  end
 end
 
 describe port(5985) do

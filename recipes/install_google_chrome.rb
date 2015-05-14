@@ -20,8 +20,8 @@ directory 'C:\MyKits\Google' do
 end
 
 remote_file 'C:\MyKits\Google\Chrome.msi' do
-  source node['chrome']['url']
-  checksum node['chrome']['checksum']
+  source node['mywin-cookbook']['chrome']['url']
+  checksum node['mywin-cookbook']['chrome']['checksum']
   action :create
 end
 

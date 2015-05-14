@@ -31,7 +31,11 @@ suites:
   - name: default
     run_list:
       - recipe[mywin-cookbook::default]
+      - recipe[mywin-cookbook::sample_dsc]
     attributes:
       mywin-cookbook:
-        chef_package: file:///c:/share/chef/chef-client-12.2.1-1.msi
-
+        chef_package: 'file:///c:/share/chef/chef-client-12.2.1-1.msi'
+      powershell:
+        powershell5:
+          url: 'file:///c:/share/windows/WindowsBlue-KB3037315-x64.msu'
+          checksum: '9a24de7b85fae96a87188a7fdaab27da3bc90d89426594cdc5f962234a61b7bd'

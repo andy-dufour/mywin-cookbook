@@ -9,20 +9,13 @@ dsc_script 'DSC_Directory' do
     DestinationPath = "C:/DSC"
   }
   EOH
+  action :run
 end
-
-# Prototype resource provided by the 'dsc' cookbook
-# to map a Chef resource to a DSC resource
-#dsc_resource 'example' do
-#  resource_name :file
-#  property :ensure, 'Present'
-#  property :type, "Directory"
-#  property :destinationpath, "C:/DSC2"
-#end
 
 # Use the cookbook_file resource to deploy a file from the cookbook
 cookbook_file 'C:\DSC\DSC_File.ps1' do
   source 'dsc/DSC_File.ps1'
+  action :create
 end
 
 # Use the dsc_script Chef resource pointing to the full DSC script 
@@ -31,4 +24,18 @@ dsc_script 'DSC_File' do
   flags ({ :sourcePath => 'C:\DSC\DSC_File.ps1', 
            :destinationPath => 'C:\Users\b.txt' })
   command 'C:\DSC\DSC_File.ps1'
+  action :run
 end
+
+#include_recipe 'powershell::powershell5'
+
+# Use 'dsc_resouce' to map a DSC resource
+# Requires chef-client 12.2.0+
+#dsc_resource 'example' do
+#  resource :file
+#  property :ensure, 'Present'
+#  property :type, "Directory"
+#  property :destinationpath, "C:/DSC2"
+#end
+
+

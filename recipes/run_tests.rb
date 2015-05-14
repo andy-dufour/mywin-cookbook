@@ -15,4 +15,5 @@ batch '*** Running serverspec tests' do
     pwd > c:/tmp/serverspec.log
     C:/opscode/chef/embedded/bin/ruby.exe C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/rspec-core-3.1.7/exe/rspec --no-color >> c:/tmp/serverspec.log
 EOH
+  action :run
 end

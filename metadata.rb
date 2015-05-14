@@ -14,8 +14,10 @@ recipe 'mywin-cookbook::install_google_chrome', 'Installs Google Chrome browser'
 recipe 'mywin-cookbook::sample_dsc', 'Demonstrate Microsoft Desired State Configuration integration'
 
 depends 'windows', '>= 0.0.0'
-depends 'dsc', '>= 0.0.0'
+#depends 'dsc', '>= 0.0.0'
 depends 'git', '>= 0.0.0'
+# needed by 'dsc_resource' as it requires powershell 5
+depends 'powershell', '>=0.0.0'
 
 supports 'windows'
 

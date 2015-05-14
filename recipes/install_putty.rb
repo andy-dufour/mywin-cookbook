@@ -5,8 +5,8 @@ directory 'C:\MyKits\PuTTY' do
 end
 
 remote_file 'C:\MyKits\PuTTY\putty-installer.exe' do
-  source node['putty']['url']
-  checksum node['putty']['checksum']
+  source node['mywin-cookbook']['putty']['url']
+  checksum node['mywin-cookbook']['putty']['checksum']
   action :create
 end
 
