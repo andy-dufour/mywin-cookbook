@@ -36,6 +36,7 @@ end
 #  property :ensure, 'Present'
 #  property :type, "Directory"
 #  property :destinationpath, "C:/DSC2"
+#  action :set
 #end
 
 
