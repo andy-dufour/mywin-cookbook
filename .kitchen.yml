@@ -25,7 +25,7 @@ driver:
 platforms:
   - name: windows2012
     driver_config:
-      box: win2012r2
+      box: win2012r2-nocm
 
 suites:
   - name: default
