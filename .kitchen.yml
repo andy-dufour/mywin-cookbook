@@ -10,7 +10,7 @@ provisioner:
   client_rb:
     # Use :enabled, :disabled or :audit_only to run the ServerSpec tests in the recipes
     audit_mode: :disabled
-    minimal_ohai: false
+    minimal_ohai: true
 
 driver_config:
   # I don't login often, but when I do, I do it as root
