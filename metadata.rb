@@ -15,9 +15,10 @@ recipe 'mywin-cookbook::sample_dsc', 'Demonstrate Microsoft Desired State Config
 
 depends 'windows', '>= 0.0.0'
 #depends 'dsc', '>= 0.0.0'
-depends 'git', '>= 0.0.0'
+#depends 'git', '>= 0.0.0'
 # needed by 'dsc_resource' as it requires powershell 5
-depends 'powershell', '>=0.0.0'
+#depends 'powershell', '>=0.0.0'
+depends 'chef-client'
 
-supports 'windows'
+#supports 'windows'
 
