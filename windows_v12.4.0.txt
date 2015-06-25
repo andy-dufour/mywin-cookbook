@@ -1,0 +1,3 @@
+url	file:///c:/share/chef/chef-client-12.4.0-1.msi
+md5	c82458846414a80bf016e42d23ec8f29
+sha256	2e19d0ebc980e5972ab86137eb71faba07e2980a8bf8b810d8da7c4f64c6f20d
