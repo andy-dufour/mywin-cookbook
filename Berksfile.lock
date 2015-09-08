@@ -1,0 +1,21 @@
+DEPENDENCIES
+  mywin-cookbook
+    path: .
+    metadata: true
+  windows
+    git: git@github.com:opscode-cookbooks/windows.git
+    revision: 7bd5d9b78c76fa2e2ab48eace2e162b2c2f9426c
+
+GRAPH
+  chef-client (4.3.0)
+    cron (>= 1.2.0)
+    logrotate (>= 1.2.0)
+    windows (~> 1.11)
+  chef_handler (1.1.9)
+  cron (1.6.1)
+  logrotate (1.9.2)
+  mywin-cookbook (1.4.7)
+    chef-client (>= 0.0.0)
+    windows (>= 0.0.0)
+  windows (1.37.0)
+    chef_handler (>= 0.0.0)

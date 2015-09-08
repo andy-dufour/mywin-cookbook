@@ -1,0 +1,3 @@
+I, [2015-09-08T13:55:18.957140 #97929]  INFO -- Kitchen: -----> Starting Kitchen (v1.4.0)
+I, [2015-09-08T13:55:20.865078 #97929]  INFO -- Kitchen: -----> Destroying <default-windows2012>...
+I, [2015-09-08T13:55:24.871511 #97929]  INFO -- Kitchen: -----> Kitchen is finished. (0m5.91s)
